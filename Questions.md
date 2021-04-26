@@ -51,7 +51,8 @@ Assume a, b and c are 8 bit numbers and x is a 16 bit number
 Assume each LED of the display is connected individually to pins 0 to 6 of port 1. Write an assembly language program to count from 1-9 over and over again and to display that count on the 7-segment LED.
 
 23. As part of a industrial automation system two wheels are driven by two separate motors, motor A and motor B. The rotation sensors give a logic low level as the wheel magnet passes the sensor. Each motor can be turned on of off by providing a logic signal as indicated in the diagram. An 8051 is to be used to control these motors where a motor can be turned on and allowed run for N rotations and then turned off. The sensor signals will cause timer/counter interrupts. <br />
-<p align = "center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/Nnnhtnr/Screenshot-189.png" alt="Screenshot-189" border="0"></a></p>
+<p align = "center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/Nnnhtnr/Screenshot-189.png" alt="Screenshot-189" border="0"></a>
+</p>
 Write an 8051 assembly language program which will turn on the two motors at the same time. Motor A will do 200 rotations and will then be stopped. Motor B will do 20,000 rotations and will then be stopped. A separate timer/counter interrupt is to be used for the control of each motor. 
 
 24. 

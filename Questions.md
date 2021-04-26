@@ -57,5 +57,39 @@ Assume a, b and c are 8 bit numbers and x is a 16 bit number
 
 25. Write an assembly language program to generate a cosine waveform with a frequency of 50 Hz, show the calculations involved. Show how a DAC should be interfaced to obtain the waveform?
 
+26. Write an assembly language program to check whether the given string is palindrome. 
+
+27. Write an assembly language program to get input from switches from Port 0 and do the following by connecting LEDs in Port1 
+    1.	Rotate a single LED towards right if 01H is the input from Port0
+    2.	Rotate a single LED towards left if 02H is the input from Port 0
+    3.	Make the alternate LED to blink if 03H is the input from Port 0.
+
+28. Write an 8051-assembly program with the following assumptions. Port P1.4 is an input and represents the condition of an oven. If it goes high it means that the oven is hot. Monitor the bit continuously. When it goes high send a low – to – high pulse to port 2.5 to turn on a buzzer.
+
+29. Assume LM35 is connected with Port0 of 8051 microcontroller, write an assembly language to read the value from the sensor and display the same in the LCD display with the message “Value is = ____ unit”, show the necessary blocks.
+
+30. Write an assembly language program to generate a square wave in Port 0 with a frequency of 50 Hz normally, the frequency should get doubled when INT0 is activated and it should be tripled when INT1 is activated.
+
+31. You are going to conduct the survey regarding, whether the Government of India can allow opening abroad universities in India? To conduct the survey, you are going to use 8051 microcontroller, two buttons, and one display. Write a program and display the following contents.
+    1. A number of people participated in the survey.
+    2. A number of people who agreed and not agreed.
+
+32. Write an assembly language program to convert a given hexadecimal number into BCD number.
+
+33. In elevator, IR sensors are mounted and it can accommodate maximum of 8 persons. Write a program to perform the following 
+    1.	Turn on LED’s which is connected in P2 to indicate when elevator overloads.
+    2.	Switch ON the lights and fans when a person enters into the elevator.
+    3.	When elevator is ideal for a while, turn OFF the lights and fans.   Assume lights and fans are connected in P1.
+
+34. Akeyboard has two keys; run and stop. Write a program that is interrupt driven by these two keys using INT0 for the run key, and INT1 for the stop key. If the run key is selected, set pin P3.0 high; if stop is selected, set the pin low.
+
+35. Write an 8051-assembly language program to generate the Fibonacci series and to output it on Port 1 
+
+36. 
+
+
+
+
+
 
 

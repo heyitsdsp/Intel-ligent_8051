@@ -25,6 +25,6 @@
     2. Create a Square wave of 75 % duty cycle on bit 3 of port 2.
 
 12. Write an assembly language program to solve the following equation <br />
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/R2GnxgJ/equation.png" alt="equation" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/K2H9pnq/equation.png" alt="equation" border="0"></a>
 
 

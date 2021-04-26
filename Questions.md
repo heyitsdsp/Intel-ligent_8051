@@ -53,7 +53,9 @@ Assume a, b and c are 8 bit numbers and x is a 16 bit number
 <p align = "center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/Nnnhtnr/Screenshot-189.png" alt="Screenshot-189" border="0"></a>
 </p><p>Write an 8051 assembly language program which will turn on the two motors at the same time. Motor A will do 200 rotations and will then be stopped. Motor B will do 20,000 rotations and will then be stopped. A separate timer/counter interrupt is to be used for the control of each motor.</p>
 
-24. 
+24. Write an algorithm and assembly program for a cash bill of “N” materials. A rupee and paisa are a two-digit number which are stored in two different arrays. Find the total amount for the “N” materials. Subtract 10% discount on the total and give the actual amount to be paid.
+
+25. Write an assembly language program to generate a cosine waveform with a frequency of 50 Hz, show the calculations involved. Show how a DAC should be interfaced to obtain the waveform?
 
 
 

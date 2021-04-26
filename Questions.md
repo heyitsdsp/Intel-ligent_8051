@@ -21,7 +21,7 @@
 10.	Write a program to count the number of vowels in the given string. Get string input from RAM location 45H. String “MICRO”. 
 
 11. Write an 8051-assembly program to					
-    a. Create a Square wave of 66 % duty cycle on bit 5 of port 1.
-    b. Create a Square wave of 75 % duty cycle on bit 3 of port 2.
+        a. Create a Square wave of 66 % duty cycle on bit 5 of port 1.
+        b. Create a Square wave of 75 % duty cycle on bit 3 of port 2.
 
 

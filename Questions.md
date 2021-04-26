@@ -21,10 +21,33 @@
 10.	Write a program to count the number of vowels in the given string. Get string input from RAM location 45H. String “MICRO”. 
 
 11. Write an 8051-assembly program to 
-    1. Create a Square wave of 66 % duty cycle on bit 5 of port 1.
-    2. Create a Square wave of 75 % duty cycle on bit 3 of port 2.
+    1. Create a Square wave of 66% duty cycle on bit 5 of port 1.
+    2. Create a Square wave of 75% duty cycle on bit 3 of port 2.
 
 12. Write an assembly language program to solve the following equation <br />
 <p align = 'center'><a href="https://imgbb.com/"><img src="https://i.ibb.co/K2H9pnq/equation.png" alt="equation" border="0"></a></p>
+Assume a, b and c are 8 bit numbers and x is a 16 bit number
+
+13. Write a program to generate PWM by comparing triangular wave and constant DC line.
+
+14. Assume that register “A” has packed BCD. Write a program to convert packed BCD  into two unpacked numbers and place them in R2 & R6.
+
+15. Assume that the INT1 pin is connected to a switch that is normally high. Whenever it goes low, it should turn on an LED. The LED is connected to P1.3 and is normally off. When it is turned on it should stay on for a fraction of second. As long as the switch is pressed low, the LED should stay on. Write an 8051-assembly program with the above specifications.
+
+16. Write a program that continuously gets a single bit of data from P3.2 and send it to P1.0, while simultaneously creating a square wave of 200 µs period on pin P2.5. Use timer 0 to create square wave. Assume that XTAL = 11.0592 MHz
+
+17. Write an 8051-assembly language program to generate 50 Hz sinusoidal wave form on port 1. 
+
+18. Write an 8051-assembly language program to generate a 50 Hz triangular wave form on pin 3 of port 2.
+
+19. Write an 8051-assembly language program to generate a 50 Hz sawtooth wave form on pin 2 of port 1.
+
+20. Write an 8051-assembly language program to generate a 50 Hz square wave form on port 1.
+
+21.  A simple burglar alarm system has 4 zone inputs connected to an 8051 I/O port. If any one of these inputs is activated a bell will sound for 5 minutes and the corresponding zone LED, or LEDS, will be activated. Design an 8051 assembly language program to implement the required functionality for this system. 
+
+22. A single digit 7-segment display device, as shown, is to be interfaced to Port 1 of an 8051 microcontroller. <br \>
+<p align = "center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/0rwXgLz/equation.png" alt="equation" border="0"></a></p>
+
 
 

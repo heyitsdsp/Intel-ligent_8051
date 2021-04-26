@@ -46,7 +46,7 @@ Assume a, b and c are 8 bit numbers and x is a 16 bit number
 
 21.  A simple burglar alarm system has 4 zone inputs connected to an 8051 I/O port. If any one of these inputs is activated a bell will sound for 5 minutes and the corresponding zone LED, or LEDS, will be activated. Design an 8051 assembly language program to implement the required functionality for this system. 
 
-22. A single digit 7-segment display device, as shown, is to be interfaced to Port 1 of an 8051 microcontroller. <br \>
+22. A single digit 7-segment display device, as shown, is to be interfaced to Port 1 of an 8051 microcontroller. <br />
 <p align = "center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/0rwXgLz/equation.png" alt="equation" border="0"></a></p>
 
 

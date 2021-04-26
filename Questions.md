@@ -17,3 +17,11 @@
 8.	Write an assembly language program to generate squarewave of 50Hz frequency normally and the frequency should change to 100 Hz when the port pin P0.0 is reset.
 
 9.	Write an assembly language program to interface LEDs and switches with the 8051 microcontroller, in which normally the LEDs should display the lights in the pattern of – all LEDs should glow in the beginning and gradually each LEDs should turn off from right to left and when external interrupt 0 is activated turning off should happen from left to right.
+
+10.	Write a program to count the number of vowels in the given string. Get string input from RAM location 45H. String “MICRO”. 
+
+11. Write an 8051-assembly program to					
+    a. Create a Square wave of 66 % duty cycle on bit 5 of port 1.
+    b. Create a Square wave of 75 % duty cycle on bit 3 of port 2.
+
+

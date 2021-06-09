@@ -85,7 +85,6 @@ Assume a, b and c are 8 bit numbers and x is a 16 bit number
 
 35. Write an 8051-assembly language program to generate the Fibonacci series and to output it on Port 1 
 
-36. 
 
 
 

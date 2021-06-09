@@ -1,14 +1,14 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        06/09/2021  13:12:52  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/10/2021  02:01:49  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-F:\SEM-4\LAB\MICROPROCESSOR AND MICROCONTROLLER\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\Answer_1.obj TO .\Obje
+F:\SEM-4\LAB\MICROPROCESSOR AND MICROCONTROLLER\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\Answer_2.obj TO .\Obje
 >> cts\Assembly_Answers PRINT (.\Listings\Assembly_Answers.m51)
 
 
 INPUT MODULES INCLUDED:
   .\Objects\STARTUP.obj (?C_STARTUP)
-  .\Objects\Answer_1.obj (ANSWER_1)
+  .\Objects\Answer_2.obj (ANSWER_2)
 
 
 LINK MAP OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
@@ -23,8 +23,8 @@ LINK MAP OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-* OVERLAP * CODE    0000H     0330H     ABSOLUTE     
-                    0330H     04D0H                  *** GAP ***
+* OVERLAP * CODE    0000H     0353H     ABSOLUTE     
+                    0353H     04ADH                  *** GAP ***
             CODE    0800H     000CH     UNIT         ?C_C51STARTUP
 
 
@@ -59,7 +59,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/09/2021  13:12:52  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/10/2021  02:01:49  PAGE 2
 
 
   C:0800H         SYMBOL        STARTUP1
@@ -76,42 +76,70 @@ SYMBOL TABLE OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
   C:0809H         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
-  -------         MODULE        ANSWER_1
-  C:031DH         SYMBOL        DELAY
-  C:0309H         SYMBOL        LEFT_TO_RIGHT
+  -------         MODULE        ANSWER_2
+  C:034DH         SYMBOL        CONSTANT
+  C:032CH         SYMBOL        CYCLE
+  C:030FH         SYMBOL        CYCLE_1
+  C:031AH         SYMBOL        CYCLE_2
+  C:033AH         SYMBOL        DELAY
   C:0300H         SYMBOL        MAIN
   D:0080H         SYMBOL        P0
   D:0090H         SYMBOL        P1
-  C:0313H         SYMBOL        RIGHT_TO_LEFT
+  C:030BH         SYMBOL        STATE_1
+  C:0328H         SYMBOL        STATE_2
   B:0088H.5       SYMBOL        TF0
   D:008CH         SYMBOL        TH0
   D:008AH         SYMBOL        TL0
   D:0089H         SYMBOL        TMOD
   B:0088H.4       SYMBOL        TR0
-  C:0328H         SYMBOL        WAIT
+  C:0345H         SYMBOL        WAIT
   C:0000H         LINE#         2
   C:0300H         LINE#         5
   C:0303H         LINE#         6
   C:0306H         LINE#         8
-  C:0309H         LINE#         10
-  C:030BH         LINE#         11
-  C:030DH         LINE#         12
-  C:030FH         LINE#         13
-  C:0311H         LINE#         14
-  C:0313H         LINE#         16
-  C:0315H         LINE#         17
-  C:0317H         LINE#         18
-  C:0319H         LINE#         19
-  C:031BH         LINE#         20
-  C:031DH         LINE#         22
-  C:0320H         LINE#         23
-  C:0323H         LINE#         24
-  C:0326H         LINE#         25
-  C:0328H         LINE#         27
-  C:032BH         LINE#         29
-  C:032DH         LINE#         30
-  C:032FH         LINE#         31
-  -------         ENDMOD        ANSWER_1
+  C:0309H         LINE#         9
+  C:030BH         LINE#         12
+  C:030DH         LINE#         13
+  C:030FH         LINE#         14
+  C:0310H         LINE#         15
+  C:0312H         LINE#         16
+  C:0314H         LINE#         17
+  C:0315H         LINE#         18
+  C:0317H         LINE#         19
+  C:0319H         LINE#         20
+  C:031AH         LINE#         21
+  C:031BH         LINE#         22
+  C:031DH         LINE#         23
+  C:031FH         LINE#         24
+  C:0320H         LINE#         25
+  C:0322H         LINE#         26
+  C:0324H         LINE#         27
+  C:0326H         LINE#         28
+  C:0328H         LINE#         31
+  C:032AH         LINE#         32
+  C:032CH         LINE#         33
+  C:032DH         LINE#         34
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/10/2021  02:01:49  PAGE 3
+
+
+  C:032FH         LINE#         35
+  C:0331H         LINE#         36
+  C:0332H         LINE#         37
+  C:0334H         LINE#         38
+  C:0336H         LINE#         39
+  C:0338H         LINE#         40
+  C:033AH         LINE#         42
+  C:033DH         LINE#         43
+  C:0340H         LINE#         44
+  C:0343H         LINE#         45
+  C:0345H         LINE#         47
+  C:0348H         LINE#         48
+  C:034AH         LINE#         49
+  C:034CH         LINE#         50
+  C:034DH         LINE#         52
+  C:0350H         LINE#         53
+  C:0352H         LINE#         54
+  -------         ENDMOD        ANSWER_2
 
 *** WARNING L5: CODE SPACE MEMORY OVERLAP
     FROM:    0000H
@@ -119,9 +147,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
 
 *** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
     SYMBOL:  ?C_START
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/09/2021  13:12:52  PAGE 3
-
-
     MODULE:  .\Objects\STARTUP.obj (?C_STARTUP)
 
 *** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
@@ -130,8 +155,8 @@ SYMBOL TABLE OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
     ADDRESS: 080AH
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0042H BYTE ( 3%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0071H BYTE ( 5%) *
 ******************************************************************************
 
-Program Size: data=9.0 xdata=0 code=831
+Program Size: data=9.0 xdata=0 code=866
 LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

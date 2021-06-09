@@ -1,0 +1,106 @@
+A51 MACRO ASSEMBLER  ANSWER_2                                                             06/10/2021 02:01:49 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\Answer_2.obj
+ASSEMBLER INVOKED BY: F:\SEM-4\Lab\Microprocessor and Microcontroller\C51\BIN\A51.EXE Answer_2.asm SET(SMALL) DEBUG PRIN
+                      T(.\Listings\Answer_2.lst) OBJECT(.\Objects\Answer_2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H;
+0000 020300            2             LJMP MAIN;
+                       3             
+0300                   4     ORG 300H;
+0300 759000            5             MAIN: MOV P1, #00H;             Initializing P1 as an output port
+0303 7580FF            6                       MOV P0, #0FFH;        Initializing P0 as an input port
+                       7                       
+0306 20801F            8                       JB P0.0, STATE_2;
+0309 7C04              9                       MOV R4, #04H;
+                      10                       
+030B                  11         STATE_1: 
+030B 7B08             12                     MOV R3, #08H;
+030D 7900             13                     MOV R1, #100H;
+*** __________________________________________________^
+*** WARNING #A52 IN 13 (Answer_2.asm, LINE 13): VALUE HAS BEEN TRUNCATED TO 8 BITS
+030F E7               14                     CYCLE_1: MOV A, @R1;
+0310 F590             15                                      MOV P1, A;
+0312 713A             16                                      ACALL DELAY;
+0314 09               17                                      INC R1;
+0315 DBF8             18                                      DJNZ R3, CYCLE_1;
+0317 7B08             19                     MOV R3, #08H;
+0319 19               20                     DEC R1;
+031A E7               21                     CYCLE_2: MOV A, @R1;
+031B F590             22                                      MOV P1, A;
+031D 713A             23                                      ACALL DELAY;
+031F 19               24                                      DEC R1;
+0320 DBF8             25                                      DJNZ R3, CYCLE_2;
+0322 DCE7             26                     DJNZ R4, STATE_1;
+0324 714D             27                     ACALL CONSTANT;
+0326 80D8             28                     SJMP MAIN;
+                      29                     
+0328                  30             STATE_2: 
+0328 7B04             31                     MOV R3, #04H;
+032A 7950             32                     MOV R1, #50H;
+032C E7               33                     CYCLE: MOV A, @R1;
+032D F590             34                                MOV P1, A;
+032F 713A             35                                ACALL DELAY;
+0331 09               36                                INC R1;
+0332 DBF8             37                                DJNZ R3, CYCLE;
+0334 DCF2             38                     DJNZ R4, STATE_2;
+0336 714D             39                     ACALL CONSTANT;
+0338 80C6             40                     SJMP MAIN;
+                      41                     
+033A 850189           42             DELAY: MOV TMOD, 01H;
+033D 758CD8           43                        MOV TH0, #0D8H;
+0340 758AF0           44                        MOV TL0, #0F0H;
+0343 D28C             45                        SETB TR0;
+                      46                        
+0345 308DFD           47                        WAIT: JNB TF0, WAIT;
+0348 C28C             48                        CLR TR0;
+034A C28D             49                        CLR TF0;
+034C 22               50                        RET;
+                      51         
+034D 7590FF           52             CONSTANT: MOV P1, #0FFH;
+0350 713A             53                               ACALL DELAY;
+0352 22               54                               RET;           
+                      55                              
+A51 MACRO ASSEMBLER  ANSWER_2                                                             06/10/2021 02:01:49 PAGE     2
+
+0050                  56     ORG 50H;
+0050 81422418         57             DB 81H, 42H, 24H, 18H;
+0100                  58     ORG 100H;
+0100 01020408         59             DB 01H, 02H, 04H, 08H, 10H, 20H, 40H, 80H;
+0104 10204080                
+                      60     
+                      61     END;    
+A51 MACRO ASSEMBLER  ANSWER_2                                                             06/10/2021 02:01:49 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CONSTANT . . . . .  C ADDR   034DH   A   
+CYCLE. . . . . . .  C ADDR   032CH   A   
+CYCLE_1. . . . . .  C ADDR   030FH   A   
+CYCLE_2. . . . . .  C ADDR   031AH   A   
+DELAY. . . . . . .  C ADDR   033AH   A   
+MAIN . . . . . . .  C ADDR   0300H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+STATE_1. . . . . .  C ADDR   030BH   A   
+STATE_2. . . . . .  C ADDR   0328H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+WAIT . . . . . . .  C ADDR   0345H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,84 @@
+A51 MACRO ASSEMBLER  ANSWER_3                                                             06/10/2021 03:08:21 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\Answer_3.obj
+ASSEMBLER INVOKED BY: F:\SEM-4\Lab\Microprocessor and Microcontroller\C51\BIN\A51.EXE Answer_3.asm SET(SMALL) DEBUG PRIN
+                      T(.\Listings\Answer_3.lst) OBJECT(.\Objects\Answer_3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H;
+0000 020200            2             LJMP MAIN;
+                       3             
+0003                   4     ORG 0003H;
+0003 7A00              5             MOV R2, #00H;
+0005 32                6             RETI;
+                       7             
+0200                   8     ORG 200H;
+0200 7A01              9             MAIN: MOV R2, #01H;
+0202 758000           10                       MOV P0, #00H;
+                      11             
+0205 BA010E           12             STATE: CJNE R2, #01H, STATE_2;
+0208 7950             13                        MOV R1, #50H;
+020A 7B0A             14                        MOV R3, #0AH;
+020C E7               15                ASC: MOV A, @R1;
+020D F580             16                             MOV P0, A;
+020F 5124             17                             ACALL DELAY;
+0211 09               18                             INC R1;
+0212 DBF8             19                             DJNZ R3, ASC;
+0214 80EF             20                SJMP STATE;
+                      21                
+0216 7B0A             22                STATE_2: MOV R3, #0AH;
+0218 7959             23                                     MOV R1, #59H;
+021A E7               24                             DESC: MOV A, @R1;
+021B F580             25                                       MOV P0, A;
+021D 5124             26                                       ACALL DELAY;
+021F 19               27                                       DEC R1;
+0220 DBF8             28                                       DJNZ R3, DESC;
+                      29                                       
+0222 80DC             30                SJMP MAIN;
+                      31     
+0224 758901           32             DELAY: MOV TMOD, #01H;
+0227 758C3C           33                        MOV TH0, #3CH;
+022A 758AB0           34                        MOV TL0, #0B0H;
+022D D28C             35                        SETB TR0;
+                      36                        
+022F 308DFD           37                        WAIT: JNB TF0, WAIT;
+0232 C28D             38                        CLR TF0;
+0234 C28C             39                        CLR TR0;
+0236 22               40                        RET;   
+                      41                
+0050                  42     ORG 50H;
+0050 FC60DAF2         43             DB 0FCH, 60H, 0DAH, 0F2H, 66H, 0B6H, 0BEH, 0E0H, 0FEH, 0F6H;
+0054 66B6BEE0                
+0058 FEF6                    
+                      44                     
+                      45     END;
+A51 MACRO ASSEMBLER  ANSWER_3                                                             06/10/2021 03:08:21 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ASC. . . . . . . .  C ADDR   020CH   A   
+DELAY. . . . . . .  C ADDR   0224H   A   
+DESC . . . . . . .  C ADDR   021AH   A   
+MAIN . . . . . . .  C ADDR   0200H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+STATE. . . . . . .  C ADDR   0205H   A   
+STATE_2. . . . . .  C ADDR   0216H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+WAIT . . . . . . .  C ADDR   022FH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

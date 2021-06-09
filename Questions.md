@@ -8,7 +8,7 @@
 
 4.	Write an assembly language program to interface LCD with 8051 microcontroller and make the screen display your name normally, when External Interrupt 0 is activated it should display your register number.
 
-5.	Write an assembly language program to interface LEDs and switches with the 8051 microcontroller, in which normally the LEDs should display the lights in the pattern of – all LEDs should glow in the beginning and gradually each LEDs should turn off from right to left normally and when external interrupt 0 is activated it should happen from left to right when the port pin P0.0 is set.
+5.	Write an assembly language program to interface LEDs and switches with the 8051 microcontroller, in which normally the LEDs should display the lights in the pattern of – all LEDs should glow in the beginning and gradually each LEDs should turn off from right to left normally and when external interrupt 0 is activated.
 
 6.	Write an assembly language program to generate a square wave with timer (timer in mode 2) interrupt with 10μs time delay. Use external interrupt to change the delay to 20 μs.
 

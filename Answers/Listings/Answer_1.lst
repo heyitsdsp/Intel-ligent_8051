@@ -1,0 +1,68 @@
+A51 MACRO ASSEMBLER  ANSWER_1                                                             06/09/2021 13:12:52 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\Answer_1.obj
+ASSEMBLER INVOKED BY: F:\SEM-4\Lab\Microprocessor and Microcontroller\C51\BIN\A51.EXE Answer_1.asm SET(SMALL) DEBUG PRIN
+                      T(.\Listings\Answer_1.lst) OBJECT(.\Objects\Answer_1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H;
+0000 020300            2             LJMP MAIN;
+                       3             
+0300                   4     ORG 300H;
+0300 7580FF            5             MAIN: MOV P0, #0FFH;    Set up P0 as an input port
+0303 759003            6                       MOV P1, #03H;         Turn on the two LEDs connected to P0.0 and P0.1
+                       7                       
+0306 30800A            8                       JNB P0.0, RIGHT_TO_LEFT;
+                       9                       
+0309 C290             10         LEFT_TO_RIGHT: CLR P1.0;
+030B 711D             11                                        ACALL DELAY;
+030D C291             12                                        CLR P1.1;
+030F 711D             13                                        ACALL DELAY;
+0311 80ED             14                                        SJMP MAIN;
+                      15                                        
+0313 C291             16         RIGHT_TO_LEFT: CLR P1.1;
+0315 711D             17                                        ACALL DELAY;
+0317 C290             18                                        CLR P1.0;
+0319 711D             19                                        ACALL DELAY;
+031B 80E3             20                                        SJMP MAIN;
+                      21                                        
+031D 758901           22         DELAY: MOV TMOD, #01H;
+0320 758CD8           23                        MOV TH0, #0D8H;
+0323 758AF0           24                        MOV TL0, #0F0H;
+0326 D28C             25                        SETB TR0;
+                      26                        
+0328 308DFD           27                        WAIT: JNB TF0, WAIT;         Wait for timer to stop counting
+                      28                        
+032B C28C             29                        CLR TR0;
+032D C28D             30                        CLR TF0;
+032F 22               31                        RET;
+                      32             END;
+A51 MACRO ASSEMBLER  ANSWER_1                                                             06/09/2021 13:12:52 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   031DH   A   
+LEFT_TO_RIGHT. . .  C ADDR   0309H   A   
+MAIN . . . . . . .  C ADDR   0300H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+RIGHT_TO_LEFT. . .  C ADDR   0313H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+WAIT . . . . . . .  C ADDR   0328H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

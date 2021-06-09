@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Answer_1.obj" 
+TO ".\Objects\Assembly_Answers" 
+PRINT(".\Listings\Assembly_Answers.m51")

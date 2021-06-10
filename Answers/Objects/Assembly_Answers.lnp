@@ -1,4 +1,4 @@
 ".\Objects\STARTUP.obj",
-".\Objects\Answer_4.obj" 
+".\Objects\Answer_6.obj" 
 TO ".\Objects\Assembly_Answers" 
 PRINT(".\Listings\Assembly_Answers.m51")

@@ -1,0 +1,25 @@
+ORG 0000H;
+	LJMP MAIN;
+	
+ORG 0003H;
+	CLR TR0;
+	MOV TH0, #0ECH;
+	SETB TR0;
+	CLR P0.0;
+	RETI;
+
+ORG 000BH;
+	CPL P0.0;
+	CLR TF0;
+	RETI;
+	
+ORG 300H;
+	MAIN: MOV IE, #82H;
+		  MOV TMOD, #02H;
+		  MOV TH0, #0F6H;
+		  CLR P0.0;		Square wave on P0.0
+		  SETB TR0;
+		  
+	HERE: SJMP HERE;
+
+END;

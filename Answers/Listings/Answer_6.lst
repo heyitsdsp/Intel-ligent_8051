@@ -1,0 +1,60 @@
+A51 MACRO ASSEMBLER  ANSWER_6                                                             06/10/2021 14:08:36 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\Answer_6.obj
+ASSEMBLER INVOKED BY: F:\SEM-4\Lab\Microprocessor and Microcontroller\C51\BIN\A51.EXE Answer_6.asm SET(SMALL) DEBUG PRIN
+                      T(.\Listings\Answer_6.lst) OBJECT(.\Objects\Answer_6.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H;
+0000 020300            2             LJMP MAIN;
+                       3             
+0003                   4     ORG 0003H;
+0003 C28C              5             CLR TR0;
+0005 758A00            6             MOV TL0, #00H;
+0008 758C00            7             MOV TH0, #00H;
+000B 758CEC            8             MOV TH0, #0ECH;
+000E D28C              9             SETB TR0;
+0010 C280             10             CLR P0.0;
+0012 32               11             RETI;
+                      12     
+000B                  13     ORG 000BH;
+000B B280             14             CPL P0.0;
+000D C28D             15             CLR TF0;
+000F 32               16             RETI;
+                      17             
+0300                  18     ORG 300H;
+0300 75A882           19             MAIN: MOV IE, #82H;
+0303 758902           20                       MOV TMOD, #02H;
+0306 758CF6           21                       MOV TH0, #0F6H;
+0309 C280             22                       CLR P0.0;             Square wave on P0.0
+030B D28C             23                       SETB TR0;
+                      24                       
+030D 80FE             25             HERE: SJMP HERE;
+                      26     
+                      27     END;
+A51 MACRO ASSEMBLER  ANSWER_6                                                             06/10/2021 14:08:36 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HERE . . . . . . .  C ADDR   030DH   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+MAIN . . . . . . .  C ADDR   0300H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

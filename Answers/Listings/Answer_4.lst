@@ -1,0 +1,132 @@
+A51 MACRO ASSEMBLER  ANSWER_4                                                             06/10/2021 11:51:50 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\Answer_4.obj
+ASSEMBLER INVOKED BY: F:\SEM-4\Lab\Microprocessor and Microcontroller\C51\BIN\A51.EXE Answer_4.asm SET(SMALL) DEBUG PRIN
+                      T(.\Listings\Answer_4.lst) OBJECT(.\Objects\Answer_4.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H;
+0000 020300            2             LJMP MAIN;
+                       3             
+0003                   4     ORG 0003H;
+0003 7A01              5             MOV R2, #01H;
+0005 32                6             RETI;
+                       7             
+0300                   8     ORG 300H;
+0300 7A00              9             MAIN: MOV R2, #00H;
+                      10             
+0302 7438             11                     INIT: MOV A, #38H;
+0304 713B             12                               ACALL CMD;
+0306 740F             13                               MOV A, #0FH;
+0308 713B             14                               ACALL CMD;
+030A 7401             15                               MOV A, #01H;
+030C 713B             16                               ACALL CMD;
+030E 7406             17                               MOV A, #06H;
+0310 713B             18                               ACALL CMD;
+0312 7480             19                               MOV A, #80H;
+0314 713B             20                               ACALL CMD;
+0316 7406             21                               MOV A, #06H;
+0318 713B             22                               ACALL CMD;
+031A 7480             23                               MOV A, #80H;
+031C 713B             24                               ACALL CMD;
+031E BA000C           25                               CJNE R2, #00H, DISPLAY_REGNO;
+                      26                               
+0321 7F09             27                     SETUP_1: MOV R7, #09H;
+0323 7800             28                                      MOV R0, #100H;
+*** ___________________________________________________________________^
+*** WARNING #A52 IN 28 (Answer_4.asm, LINE 28): VALUE HAS BEEN TRUNCATED TO 8 BITS
+                      29                               
+0325 E6               30                     DISPLAY_NAME: MOV A, @R0;
+0326 7148             31                                               ACALL DAT;
+0328 08               32                                               INC R0;
+0329 DFFA             33                                               DJNZ R7, DISPLAY_NAME;
+032B 80D5             34                                               SJMP INIT;
+                      35                                               
+032D                  36                 DISPLAY_REGNO: 
+032D 7F09             37                             SETUP_2: MOV R7, #09H;
+032F 7850             38                                              MOV R0, #150H;
+*** ___________________________________________________________________________^
+*** WARNING #A52 IN 38 (Answer_4.asm, LINE 38): VALUE HAS BEEN TRUNCATED TO 8 BITS
+                      39                                              
+0331 E6               40                             DISP: MOV A, @R0;
+0332 7148             41                                   ACALL DAT;
+0334 08               42                                       INC R0;
+0335 DFFA             43                                       DJNZ R7, DISP;
+0337 7A00             44                                       MOV R2, #00H;
+0339 80C7             45                                       SJMP INIT;
+                      46                     
+033B F5A0             47                     CMD: MOV P2, A;
+033D C290             48                              CLR P1.0;
+033F C291             49                              CLR P1.1;
+0341 D292             50                              SETB P1.2;
+0343 C292             51                              CLR P1.2;
+0345 7155             52                              ACALL DELAY;
+0347 22               53                              RET;
+A51 MACRO ASSEMBLER  ANSWER_4                                                             06/10/2021 11:51:50 PAGE     2
+
+                      54                              
+0348 F5A0             55                 DAT: MOV P2, A;
+034A D290             56                              SETB P1.0;
+034C C291             57                              CLR P1.1;
+034E D292             58                              SETB P1.2;
+0350 C292             59                              CLR P1.2;
+0352 7155             60                              ACALL DELAY;
+0354 22               61                              RET;
+                      62                              
+0355 758901           63                 DELAY: MOV TMOD, #01H;
+0358 758CD8           64                                MOV TH0, #0D8H;
+035B 758AF0           65                                MOV TL0, #0F0H;
+035E D28C             66                                SETB TR0;
+                      67                                
+0360 308DFD           68                                WAIT: JNB TF0, WAIT;
+0363 C28D             69                                CLR TF0;
+0365 C28C             70                                CLR TR0;
+0367 22               71                                RET;
+                      72                                
+0100                  73     ORG 100H;
+0100 48455949         74             DB "HEYITSDSP";
+0104 54534453                
+0108 50                      
+                      75                     
+0150                  76     ORG 150H;
+0150 31394245         77             DB "19BEE0375";
+0154 45303337                
+0158 35                      
+                      78                     
+                      79     END;                              
+                                             
+A51 MACRO ASSEMBLER  ANSWER_4                                                             06/10/2021 11:51:50 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CMD. . . . . . . .  C ADDR   033BH   A   
+DAT. . . . . . . .  C ADDR   0348H   A   
+DELAY. . . . . . .  C ADDR   0355H   A   
+DISP . . . . . . .  C ADDR   0331H   A   
+DISPLAY_NAME . . .  C ADDR   0325H   A   
+DISPLAY_REGNO. . .  C ADDR   032DH   A   
+INIT . . . . . . .  C ADDR   0302H   A   
+MAIN . . . . . . .  C ADDR   0300H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+SETUP_1. . . . . .  C ADDR   0321H   A   
+SETUP_2. . . . . .  C ADDR   032DH   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+WAIT . . . . . . .  C ADDR   0360H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  2 WARNING(S), 0 ERROR(S)

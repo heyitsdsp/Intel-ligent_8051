@@ -1,14 +1,14 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        06/10/2021  14:08:36  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/10/2021  21:15:58  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-F:\SEM-4\LAB\MICROPROCESSOR AND MICROCONTROLLER\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\Answer_6.obj TO .\Obje
->> cts\Assembly_Answers PRINT (.\Listings\Assembly_Answers.m51)
+F:\SEM-4\LAB\MICROPROCESSOR AND MICROCONTROLLER\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\Answer_17.obj TO .\Obj
+>> ects\Assembly_Answers PRINT (.\Listings\Assembly_Answers.m51)
 
 
 INPUT MODULES INCLUDED:
   .\Objects\STARTUP.obj (?C_STARTUP)
-  .\Objects\Answer_6.obj (ANSWER_6)
+  .\Objects\Answer_17.obj (ANSWER_17)
 
 
 LINK MAP OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
@@ -23,8 +23,8 @@ LINK MAP OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-* OVERLAP * CODE    0000H     030FH     ABSOLUTE     
-                    030FH     04F1H                  *** GAP ***
+* OVERLAP * CODE    0000H     013FH     ABSOLUTE     
+                    013FH     06C1H                  *** GAP ***
             CODE    0800H     000CH     UNIT         ?C_C51STARTUP
 
 
@@ -59,7 +59,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/10/2021  14:08:36  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/10/2021  21:15:58  PAGE 2
 
 
   C:0800H         SYMBOL        STARTUP1
@@ -76,34 +76,60 @@ SYMBOL TABLE OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
   C:0809H         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
-  -------         MODULE        ANSWER_6
-  C:030DH         SYMBOL        HERE
-  D:00A8H         SYMBOL        IE
-  C:0300H         SYMBOL        MAIN
-  D:0080H         SYMBOL        P0
+  -------         MODULE        ANSWER_17
+  C:012FH         SYMBOL        DELAY
+  C:011FH         SYMBOL        INIT_DELAY
+  C:0114H         SYMBOL        LOOP
+  C:0100H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  C:0106H         SYMBOL        START
   B:0088H.5       SYMBOL        TF0
+  B:0088H.7       SYMBOL        TF1
   D:008CH         SYMBOL        TH0
+  D:008DH         SYMBOL        TH1
   D:008AH         SYMBOL        TL0
+  D:008BH         SYMBOL        TL1
   D:0089H         SYMBOL        TMOD
   B:0088H.4       SYMBOL        TR0
+  B:0088H.6       SYMBOL        TR1
+  C:0127H         SYMBOL        WAIT_1
+  C:0137H         SYMBOL        WAIT_2
   C:0000H         LINE#         2
-  C:0003H         LINE#         5
-  C:0005H         LINE#         6
-  C:0008H         LINE#         7
-  C:000BH         LINE#         8
-  C:000EH         LINE#         9
-  C:0010H         LINE#         10
-  C:0012H         LINE#         11
-  C:000BH         LINE#         14
-  C:000DH         LINE#         15
-  C:000FH         LINE#         16
-  C:0300H         LINE#         19
-  C:0303H         LINE#         20
-  C:0306H         LINE#         21
-  C:0309H         LINE#         22
-  C:030BH         LINE#         23
-  C:030DH         LINE#         25
-  -------         ENDMOD        ANSWER_6
+  C:0100H         LINE#         5
+  C:0103H         LINE#         6
+  C:0106H         LINE#         8
+  C:0108H         LINE#         9
+  C:0109H         LINE#         10
+  C:010AH         LINE#         11
+  C:010BH         LINE#         12
+  C:010DH         LINE#         13
+  C:0110H         LINE#         14
+  C:0112H         LINE#         15
+  C:0114H         LINE#         17
+  C:0115H         LINE#         18
+  C:0116H         LINE#         19
+  C:0117H         LINE#         20
+  C:0119H         LINE#         21
+  C:011BH         LINE#         22
+  C:011DH         LINE#         24
+  C:011FH         LINE#         26
+  C:0122H         LINE#         27
+  C:0125H         LINE#         28
+  C:0127H         LINE#         29
+  C:012AH         LINE#         30
+  C:012CH         LINE#         31
+  C:012EH         LINE#         32
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/10/2021  21:15:58  PAGE 3
+
+
+  C:012FH         LINE#         34
+  C:0132H         LINE#         35
+  C:0135H         LINE#         36
+  C:0137H         LINE#         37
+  C:013AH         LINE#         38
+  C:013CH         LINE#         39
+  C:013EH         LINE#         40
+  -------         ENDMOD        ANSWER_17
 
 *** WARNING L5: CODE SPACE MEMORY OVERLAP
     FROM:    0000H
@@ -119,11 +145,8 @@ SYMBOL TABLE OF MODULE:  .\Objects\Assembly_Answers (?C_STARTUP)
     ADDRESS: 080AH
 
 ******************************************************************************
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/10/2021  14:08:36  PAGE 3
-
-
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0036H BYTE ( 2%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0076H BYTE ( 5%) *
 ******************************************************************************
 
-Program Size: data=9.0 xdata=0 code=798
+Program Size: data=9.0 xdata=0 code=334
 LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

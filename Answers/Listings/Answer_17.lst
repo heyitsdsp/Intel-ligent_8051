@@ -1,0 +1,102 @@
+A51 MACRO ASSEMBLER  ANSWER_17                                                            06/10/2021 21:15:58 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\Answer_17.obj
+ASSEMBLER INVOKED BY: F:\SEM-4\Lab\Microprocessor and Microcontroller\C51\BIN\A51.EXE Answer_17.asm SET(SMALL) DEBUG PRI
+                      NT(.\Listings\Answer_17.lst) OBJECT(.\Objects\Answer_17.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H;
+0000 020100            2             LJMP MAIN;
+                       3             
+0100                   4     ORG 100H;
+0100 759000            5             MAIN: MOV P1, #00H;
+0103 900020            6                       MOV DPTR, #0020H;
+0106                   7             START:
+0106 7900              8               MOV R1, #00H;
+0108 E9                9               MOV A, R1;
+0109 93               10               MOVC A, @A+DPTR;
+010A 09               11               INC R1;
+010B 7A23             12               MOV R2, #35;
+010D 758911           13               MOV TMOD, #11H;
+0110 F590             14               MOV P1, A;
+0112 311F             15               ACALL INIT_DELAY;
+                      16                       
+0114 E9               17             LOOP: MOV A, R1;
+0115 93               18                       MOVC A, @A+DPTR;
+0116 09               19                       INC R1;
+0117 F590             20                       MOV P1, A;
+0119 312F             21                       ACALL DELAY;
+011B DAF7             22                       DJNZ R2, LOOP;
+                      23                       
+011D 80E7             24             SJMP START;
+                      25             
+011F 758CFC           26             INIT_DELAY: MOV TH0, #0FCH;
+0122 758A18           27                                     MOV TL0, #18H;
+0125 D28C             28                                     SETB TR0;
+0127 308DFD           29                                     WAIT_1: JNB TF0, WAIT_1;
+012A C28C             30                                     CLR TR0;
+012C C28D             31                                     CLR TF0;
+012E 22               32                                     RET;
+                      33                                     
+012F 758DFE           34             DELAY: MOV TH1, #0FEH;
+0132 758B0C           35                        MOV TL1, #0CH;
+0135 D28E             36                        SETB TR1;
+0137 308FFD           37                        WAIT_2: JNB TF1, WAIT_2;
+013A C28F             38                        CLR TF1;
+013C C28E             39                        CLR TR1;
+013E 22               40                        RET;
+                      41                        
+0020                  42     ORG 20H;
+0020 7F95AABE         43             DB      7FH, 95H, 0AAH, 0BEH, 0D0H, 0E0H, 0ECH, 0F6H, 0FCH, 0FEH, 0FCH, 0F6H, 0ECH,
+                              0E0H, 0E0H, 0D0H, 0BEH, 0AAH, 95H, 7FH, 68H, 53H, 3FH, 2DH, 1DH, 11H, 07H, 01H, 01H, 07H, 
+                             11H, 1DH, 2DH, 3FH, 53H, 68H, 7EH;
+0024 D0E0ECF6                
+0028 FCFEFCF6                
+002C ECE0E0D0                
+0030 BEAA957F                
+0034 68533F2D                
+0038 1D110701                
+003C 0107111D                
+0040 2D3F5368                
+0044 7E                      
+                      44                       
+                      45     END;              
+                                                     
+A51 MACRO ASSEMBLER  ANSWER_17                                                            06/10/2021 21:15:58 PAGE     2
+
+                                               
+                                     
+A51 MACRO ASSEMBLER  ANSWER_17                                                            06/10/2021 21:15:58 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   012FH   A   
+INIT_DELAY . . . .  C ADDR   011FH   A   
+LOOP . . . . . . .  C ADDR   0114H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+START. . . . . . .  C ADDR   0106H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TF1. . . . . . . .  B ADDR   0088H.7 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+WAIT_1 . . . . . .  C ADDR   0127H   A   
+WAIT_2 . . . . . .  C ADDR   0137H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,48 @@
+ORG 0000H;
+	LJMP MAIN;
+	
+ORG 100H;
+	MAIN: MOV P1, #00H;
+		  MOV DPTR, #0020H;
+	START:
+	  MOV R1, #00H;
+	  MOV A, R1;
+	  MOVC A, @A+DPTR;
+	  INC R1;
+	  MOV R2, #35;
+	  MOV TMOD, #11H;
+	  MOV P1, A;
+	  ACALL INIT_DELAY;
+		  
+	LOOP: MOV A, R1;
+		  MOVC A, @A+DPTR;
+		  INC R1;
+		  MOV P1, A;
+		  ACALL DELAY;
+		  DJNZ R2, LOOP;
+		  
+	SJMP START;
+	
+	INIT_DELAY: MOV TH0, #0FCH;
+				MOV TL0, #18H;
+				SETB TR0;
+				WAIT_1: JNB TF0, WAIT_1;
+				CLR TR0;
+				CLR TF0;
+				RET;
+				
+	DELAY: MOV TH1, #0FEH;
+		   MOV TL1, #0CH;
+		   SETB TR1;
+		   WAIT_2: JNB TF1, WAIT_2;
+		   CLR TF1;
+		   CLR TR1;
+		   RET;
+		   
+ORG 20H;
+	DB	7FH, 95H, 0AAH, 0BEH, 0D0H, 0E0H, 0ECH, 0F6H, 0FCH, 0FEH, 0FCH, 0F6H, 0ECH, 0E0H, 0E0H, 0D0H, 0BEH, 0AAH, 95H, 7FH, 68H, 53H, 3FH, 2DH, 1DH, 11H, 07H, 01H, 01H, 07H, 11H, 1DH, 2DH, 3FH, 53H, 68H, 7EH;
+		  
+END;		  
+			
+		  
+	
